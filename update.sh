@@ -29,7 +29,10 @@ then
   echo "log not modified, no changes"
   exit 0
 fi
-
+pushd "index"
+  cp 00-index.tar.gz ../archive
+  cp log ../archive
+popd
 rm -rf index/data
 mkdir index/data
 echo "unpacking index"
